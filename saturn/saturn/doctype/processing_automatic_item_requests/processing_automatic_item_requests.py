@@ -78,12 +78,12 @@ class ProcessingAutomaticItemRequests(Document):
         items_added = 0
         for item in items:
             outflow_qty = self.get_item_quantity_in_stores(item.item_code)
-            if outflow_qty > 0:
-                row = self.append("automated_item_request_processing_schedule", {})
-                row.item = item.item_code
-                row.outflow_qty = outflow_qty
-                self.calculate_row_values(row)
-                items_added += 1
+            # if outflow_qty > 0:
+            row = self.append("automated_item_request_processing_schedule", {})
+            row.item = item.item_code
+            row.outflow_qty = outflow_qty
+            self.calculate_row_values(row)
+            items_added += 1
         
         if items_added > 0:
             frappe.msgprint(f"تمت إضافة {items_added} صنف")
