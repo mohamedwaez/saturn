@@ -103,8 +103,8 @@ class ProcessingAutomaticItemRequests(Document):
         # حساب القيم الأخرى
         if self.number_of_days and self.number_of_days > 0:
             row.daily_withdrawal_rate = row.outflow_qty / self.number_of_days
-            # تقريب daily_withdrawal_rate إلى أقرب عدد صحيح أكبر
-            row.daily_withdrawal_rate = math.ceil(row.daily_withdrawal_rate)
+            # # تقريب daily_withdrawal_rate إلى أقرب عدد صحيح أكبر
+            # row.daily_withdrawal_rate = math.ceil(row.daily_withdrawal_rate)
 
     @frappe.whitelist()
     def get_item_quantity_in_stores(self, item_code):
